@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export function Login() {
   const [formsData, setFormsData] = useState({
@@ -100,13 +101,16 @@ export function Login() {
         <button
           type="submit"
           disabled={!isFormValid}
-          className={`w-full p-2 rounded text-white font-semibold ${
-            isFormValid ? "bg-blue-500 hover:bg-blue-600" : "bg-gray-400 cursor-not-allowed"
-          }`}>
+          className={`w-full p-2 rounded text-white font-semibold ${isFormValid ? "bg-blue-500 hover:bg-blue-600" : "bg-gray-400 cursor-not-allowed"
+            }`}>
           Login
         </button>
 
         <p className="mt-3 text-gray-600 text-sm">Forgot Password?</p>
+        <p>
+          Don't have an account?
+          <Link to="/registration" className="text-blue-500 hover:text-blue-300">Registrate it!</Link>
+        </p>
 
         {loginMessage && <p className="mt-3 text-green-600 font-semibold">{loginMessage}</p>}
       </form>

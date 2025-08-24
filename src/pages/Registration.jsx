@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export function Registration() {
   const [formsData, setFormsData] = useState({
@@ -20,7 +21,7 @@ export function Registration() {
 
   useEffect(() => {
     const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formsData.email);
-    const passwordValid = 
+    const passwordValid =
       passwordValidations.letter &&
       passwordValidations.capital &&
       passwordValidations.number &&
@@ -137,6 +138,12 @@ export function Registration() {
         >
           Register
         </button>
+
+        <p>
+          Do you have an account?
+          <Link to="/login" className="text-blue-500 hover:text-blue-300"> Log in to it!</Link>
+        </p>
+
 
         {loginMessage && <p className="mt-3 text-green-600 font-semibold">{loginMessage}</p>}
       </form>
