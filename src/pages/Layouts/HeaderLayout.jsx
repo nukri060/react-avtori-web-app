@@ -72,6 +72,12 @@ export default function HeaderLayout() {
               >
                 Register
               </Link>
+              <Link
+                to="/about"
+                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+              >
+                About
+              </Link>
             </nav>
 
             <div className="md:hidden">
@@ -105,6 +111,13 @@ export default function HeaderLayout() {
               onClick={toggleMobileMenu}
             >
               Register
+            </Link>
+            <Link
+              to="/about"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              onClick={toggleMobileMenu}
+            >
+              About
             </Link>
             <div className="mt-2 px-3">
               <input
