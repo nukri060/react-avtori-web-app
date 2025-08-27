@@ -18,33 +18,37 @@ export function FAQ() {
         }
     ];
 
-    function handleChange(event) {
-        setNumber(Number(event.target.innerText));
+    function handleChange(selectedIndex) {
+        setNumber(selectedIndex);
     }
 
     return (
-        <div className="flex gap-6 text-black">
-            <nav>
-                <ul className="space-y-2">
-                    {articles.map((_, index) => (
+        <div className="container mx-auto p-8 flex flex-col lg:flex-row gap-8 text-gray-800">
+            <nav className="w-full lg:w-1/4">
+                <ul className="space-y-4">
+                    {articles.map((article, index) => (
                         <li
                             key={index}
-                            onClick={handleChange}
-                            className={`cursor-pointer hover:text-red-500 ${
-                                number === index ? "font-bold" : ""
+                            onClick={() => handleChange(index)}
+                            className={`cursor-pointer text-lg p-3 rounded-lg transition-all duration-200 ease-in-out ${
+                                number === index
+                                    ? "bg-blue-600 text-white shadow-md transform scale-105"
+                                    : "text-gray-600 hover:bg-gray-100 hover:text-blue-600"
                             }`}
                         >
-                            {index}
+                            {article.title}
                         </li>
                     ))}
                 </ul>
             </nav>
 
-            <article className="max-w-md">
-                <h3 className="text-xl font-semibold mb-2">
+            <article className="max-w-full lg:max-w-3xl flex-1 bg-white p-8 rounded-lg shadow-lg">
+                <h3 className="text-3xl font-bold mb-4 text-blue-700">
                     {articles[number].title}
                 </h3>
-                <p>{articles[number].content}</p>
+                <p className="text-gray-700 leading-relaxed text-lg">
+                    {articles[number].content}
+                </p>
             </article>
         </div>
     );
