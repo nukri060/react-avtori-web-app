@@ -2,7 +2,9 @@ import { Routes, Route } from "react-router-dom";
 import HeaderLayout from "./pages/Layouts/HeaderLayout";
 import { Login } from "./pages/Login";
 import { Registration } from "./pages/Registration";
-import { About } from "../../about";
+import { About } from "./pages/About";
+import { Contact } from "./pages/Contact";
+import { FAQ } from "./pages/Faq";
 
 
 import "./App.css";
@@ -15,6 +17,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/about" element={<About/>}/>
+        <Route path="/contact" element={<Contact/>}/>
+        <Route path="/faq" element={<FAQ/>}/>
       </Route>
     </Routes>
   );
