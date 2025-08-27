@@ -5,6 +5,7 @@ import { Registration } from "./pages/Registration";
 import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
 import { FAQ } from "./pages/Faq";
+import { TermsAndConditions } from "./pages/TermsAndConditions";
 
 
 import "./App.css";
@@ -19,6 +20,7 @@ function App() {
         <Route path="/about" element={<About/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/faq" element={<FAQ/>}/>
+        <Route path="/terms-and-conditions" element={<TermsAndConditions/>}/>
       </Route>
     </Routes>
   );
