@@ -78,6 +78,24 @@ export default function HeaderLayout() {
               >
                 About
               </Link>
+              <Link
+                to="/contact"
+                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+              >
+                Contact
+              </Link>
+              <Link
+                to="/faq"
+                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+              >
+                FAQ
+              </Link>
+              <Link
+                to="/terms"
+                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+              >
+                Terms
+              </Link>
             </nav>
 
             <div className="md:hidden">
