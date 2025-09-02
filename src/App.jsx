@@ -6,6 +6,7 @@ import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
 import { FAQ } from "./pages/Faq";
 import { TermsAndConditions } from "./pages/TermsAndConditions";
+import Shop from "./pages/Shop";
 
 
 import "./App.css";
