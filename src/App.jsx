@@ -7,6 +7,7 @@ import { Contact } from "./pages/Contact";
 import { FAQ } from "./pages/Faq";
 import { TermsAndConditions } from "./pages/TermsAndConditions";
 import Shop from "./pages/Shop";
+import { products } from "./data/products";
 
 
 import "./App.css";
@@ -22,7 +23,7 @@ function App() {
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/faq" element={<FAQ/>}/>
         <Route path="/terms" element={<TermsAndConditions/>}/>
-        <Route path="/shop" element={<Shop/>}/>
+        <Route path="/shop" element={<Shop products={products}/>}/>
       </Route>
     </Routes>
   );

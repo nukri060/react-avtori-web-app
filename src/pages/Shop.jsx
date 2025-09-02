@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import ProductCard from "../components/ProductCard";
-import { products } from "../data/products";
+import CategoryFilter from "../components/CategoryFilter";
 
-export default function Shop() {
+export default function Shop({products}) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -22,7 +22,9 @@ export default function Shop() {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+    <>
+    <CategoryFilter/>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
       {products.map((item) => (
         <ProductCard
           key={item.id}
@@ -35,5 +37,6 @@ export default function Shop() {
         />
       ))}
     </div>
+    </>
   );
 }
