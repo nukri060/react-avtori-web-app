@@ -18,7 +18,7 @@ export default function CartComponent({
       </div>
 
       <div className="w-24 text-center text-blue-600 font-semibold">
-        ${price.toFixed(2)}
+        ${price}
       </div>
 
       <div className="w-36 flex items-center justify-center gap-2">
@@ -32,7 +32,7 @@ export default function CartComponent({
       </div>
 
       <div className="w-28 text-center text-gray-700 font-medium">
-        ${(price * quantity).toFixed(2)}
+        ${price}
       </div>
     </div>
   );
