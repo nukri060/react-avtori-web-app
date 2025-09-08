@@ -8,6 +8,7 @@ import { FAQ } from "./pages/Faq";
 import { TermsAndConditions } from "./pages/TermsAndConditions";
 import Shop from "./pages/Shop";
 import { products } from "./data/products";
+import CartPage from "./pages/Cart";
 
 
 import "./App.css";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/faq" element={<FAQ/>}/>
         <Route path="/terms" element={<TermsAndConditions/>}/>
         <Route path="/shop" element={<Shop products={products}/>}/>
+        <Route path="/cart" element={<CartPage/>}/>
       </Route>
     </Routes>
   );
