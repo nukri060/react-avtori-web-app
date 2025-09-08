@@ -96,6 +96,18 @@ export default function HeaderLayout() {
               >
                 Terms
               </Link>
+              <Link
+                to="/shop"
+                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+              >
+                Shop
+              </Link>
+              <Link
+                to="/cart"
+                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+              >
+                Cart
+              </Link>
             </nav>
 
             <div className="md:hidden">
