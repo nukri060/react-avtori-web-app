@@ -7,7 +7,7 @@ export default function ProductCard({ image, name, price, desc }) {
   function addItem() {
     addToCart({
       name,
-      price,
+      price: Number(price.replace(/[^0-9.]/g, '')),
       image,
       quantity: 1, 
     });

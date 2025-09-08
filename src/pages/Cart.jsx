@@ -1,6 +1,7 @@
 import CartComponent from "../components/CartComponent";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { Link } from "react-router";
 
 export default function CartPage() {
   const { carts, clearCart } = useContext(CartContext);
@@ -28,7 +29,10 @@ export default function CartPage() {
 
       <div className="flex flex-col gap-4">
         {carts.length === 0 ? (
-          <p className="text-center text-gray-500">Your cart is empty.</p>
+          <>
+            <p className="text-center text-gray-500">Your cart is empty.</p>
+            <Link to="/shop" className="p-2 border-2 border-blue-500 rounded">Go to the shop!</Link>
+          </>
         ) : (
           carts.map((item) => (
             <CartComponent
@@ -41,6 +45,14 @@ export default function CartPage() {
           ))
         )}
       </div>
+
+      {carts.length > 0 && (
+        <div className="flex justify-end items-center mt-6 pt-4 border-t border-gray-200">
+          <div className="text-xl font-semibold text-gray-800">
+            Total: ${(carts.reduce((acc, item) => acc + Number(item.price) * item.quantity, 0)).toFixed(2)}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
