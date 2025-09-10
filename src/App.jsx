@@ -9,14 +9,15 @@ import { TermsAndConditions } from "./pages/TermsAndConditions";
 import Shop from "./pages/Shop";
 import { products } from "./data/products";
 import CartPage from "./pages/Cart";
-import { CartProvider } from "./context/CartContext"; 
+import { CartProvider } from "./context/CartContext";
+import ProductDetailPage from "./pages/ProductDetails";
 
 import "./App.css";
 import "./index.css";
 
 function App() {
   return (
-    <CartProvider> 
+    <CartProvider>
       <Routes>
         <Route element={<HeaderLayout />}>
           <Route path="/login" element={<Login />} />
@@ -26,6 +27,7 @@ function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/terms" element={<TermsAndConditions />} />
           <Route path="/shop" element={<Shop products={products} />} />
+          <Route path="/det/:id" element={<ProductDetailPage />} /> {/* 👈 dynamic route */}
           <Route path="/cart" element={<CartPage />} />
         </Route>
       </Routes>
